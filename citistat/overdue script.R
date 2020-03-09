@@ -1,17 +1,11 @@
-library(readxl)
-library(ggplot2)
-library(ggiteam)
-library(stringr)
-library(plyr)
-library(anchors)
-library(lubridate)
-library(zoo)
-library(sparkline)
+pacman::p_load(readxl, ggplot2, ggiteam, stringr, plyr, 
+               anchors, lubridate, zoo, sparkline)
 
 ##Load Data from Excel and create weekly date table
 df <- read_excel("~/2.3.2020 DOT.xlsx")
-dates <- seq.Date(from = as.Date('2018-01-01'), to = as.Date('2020-01-01'), by = 'days')
-
+dates <- seq.Date(from = as.Date('2018-01-01'), 
+                  to = as.Date('2020-01-01'), 
+                  by = 'days')
 
 ##Format the dates properly
 df %>%
